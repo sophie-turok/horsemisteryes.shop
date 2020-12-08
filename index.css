@@ -1,5 +1,8 @@
-.content img {
+.item img {
 	width: 100%;
+	padding: 15px;
+	cursor: pointer;
+	outline: none;
 }
 
 #items {
@@ -10,11 +13,28 @@
 	margin: auto;
 }
 
-.content {
+.modal {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal .snipcart-add-item {
+	width: 20%;
+}
+
+.modalbuttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+.item {
     width: 21%;
     display: flex;
     margin: 15px;
     flex-direction: column;
+    align-items: center;
 }
 
 .modal.active {
@@ -30,6 +50,8 @@
     color: aliceblue;
     border: none;
     cursor: pointer;
+	width: 70%;
+    font-size: 17px;
 }
 
 .snipcart-checkout {
@@ -48,6 +70,28 @@
     color: aliceblue;
     border: none;
     cursor: pointer;
+}
+
+.navbutton {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: transparent;
+	width: 20px;
+	height: 20px;
+	border: none;
+	margin: 10px;
+}
+
+.prev {
+	background-image: url('imgs/leftarrow.svg');
+}
+
+.next {
+	background-image: url('imgs/rightarrow.svg');
+}
+
+.siema img {
+	width: 80%;
 }
 
 #contactus {
