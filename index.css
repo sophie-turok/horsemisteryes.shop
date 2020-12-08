@@ -1,8 +1,14 @@
 .item img {
 	width: 100%;
 	padding: 15px;
-	cursor: pointer;
 	outline: none;
+}
+
+.item button.btn {
+    border: none;
+    background: transparent;
+    margin-bottom: 11px;
+    cursor: pointer;
 }
 
 .thumbnail {

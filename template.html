@@ -28,41 +28,46 @@
         } else {
             txt = txt[0]
         }
+        var price = document.getElementById("price").value.replace('$','');
         [].forEach.call(document.getElementById("generateForm").childNodes,(input, index) => {
             if (index === 0) {
                 txt.value =
 `<div class="item">
-    <img type="button" class="btn" data-modal-open="${document.getElementById("name").value}" src="./imgs/${input.value}"/>
+    <img type="button" class="btn" data-modal-open="${document.getElementById("name").value.replace(' ','')}" src="./imgs/${input.value}"/>
+    <a type="button" class="btn" data-modal-open="${document.getElementById("name").value.replace(' ','')}"> ${document.getElementById("name").value} </a>
+    <br>
 
-    <div id="${document.getElementById("name").value}" data-modal>
+    <div id="${document.getElementById("name").value.replace(' ','')}" data-modal>
         <div class="modal" data-modal-document>
             <div class="modalbuttons">
                 <button class="prev navbutton"></button>
                 <button class="next navbutton"></button>
                 <p style="padding-right:10px"></p>
                 <button class="snipcart-add-item"
-                data-item-id="${document.getElementById("name").value}"
-                data-item-price="${document.getElementById("price").value}"
+                data-item-id="${document.getElementById("name").value.replace(' ','')}"
+                data-item-price="${price}"
                 data-item-image="./imgs/${input.value}"
                 data-item-name="${document.getElementById("name").value}">
                 Add to cart
                 </button>
             </div>
-	        <div class="siema" id="${document.getElementById("name").value}Siema">
+	        <div class="siema" id="${document.getElementById("name").value.replace(' ','')}Siema">
 	            <img src="./imgs/${input.value}"/>`;
 	            } else {
-	                txt.value = `${txt.value}
+                    if (input.value !== '') {
+                        txt.value = `${txt.value}
 	            <img src="./imgs/${input.value}"/>`
-	            }
+    	            }
+                }
 	        });
 	        txt.value = `${txt.value}
 	        </div>
 	    </div>
     </div>
     <button class="snipcart-add-item"
-      data-item-id="${document.getElementById("name").value}"
-      data-item-price="${document.getElementById("price").value}"
-      data-item-url="./${document.getElementById("name").value}"
+      data-item-id="${document.getElementById("name").value.replace(' ','')}"
+      data-item-price="${price}"
+      data-item-url="./${document.getElementById("name").value.replace(' ','')}"
       data-item-image="./imgs/${document.getElementById("generateForm").childNodes[0].value}"
       data-item-name="${document.getElementById("name").value}">
       Add to cart
