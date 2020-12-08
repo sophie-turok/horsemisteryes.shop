@@ -31,3 +31,49 @@
     border: none;
     cursor: pointer;
 }
+
+.snipcart-checkout {
+    position: fixed;
+    right: 100px;
+    bottom: 0;
+    margin: 10px;
+    padding: 5px;
+    font-size: 24px;
+    text-decoration: none;
+    background: url(imgs/addtocart.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+}
+
+#contactus {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    padding: 5px;
+    text-decoration: none;
+    background: url(imgs/addtocart.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+}
+
+.snipcart-cart-button {
+    background: url(imgs/addtocart.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+}
