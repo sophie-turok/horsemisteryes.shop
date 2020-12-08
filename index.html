@@ -2,78 +2,121 @@
 <html>
   <head>
     <title>horsemisterys</title>
-    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.26/default/snipcart.css" />
+    <link rel="stylesheet" href="dist/css/modals.css">
+    <link rel="stylesheet" href="index.css" />
+    <script src="dist/js/modals.js"></script>
   </head>
   <body>
-    <div class="content">
-      <img src="/horses/horse1.jpg"/>
-      <button class="snipcart-add-item"
-        data-item-id="horse1"
-        data-item-price="79.99"
-        data-item-url="/horses/horse1"
-        data-item-description="Horse 1."
-        data-item-image="/horses/horse1.jpg"
-        data-item-name="Horse 1">
-        Add to cart
-      </button>
+    <img style="width: 100%" src="imgs/horsemisterys.jpg"/>
+    <div id="items">
+      <div class="content">
+        <a data-modal="#modal" href="#">
+          <img src="./imgs/skirt1.jpeg"/>
+        </a>
+
+        <div class="modal" data-modal-window id="modal">
+          <div class="siema">
+            <img src="./imgs/skirt1.jpeg"/>
+            <img src="./imgs/skirt2.jpg"/>
+            <img src="./imgs/skirt3.jpg"/>
+          </div>
+        </div>
+        <button class="snipcart-add-item"
+          data-item-id="skirt"
+          data-item-price="79.99"
+          data-item-url="./skirt1"
+          data-item-description="Skirt"
+          data-item-image="./imgs/skirt1.jpg"
+          data-item-name="Skirt">
+          Add to cart
+        </button>
+      </div>
+
+      <div class="content">
+        <a data-modal="#modal" href="#">
+          <img src="./horses/horse2.jpg"/>
+        </a>
+
+        <div class="modal" data-modal-window id="modal">
+          <img src="./horses/horse2.jpg"/>
+        </div>      <button class="snipcart-add-item"
+          data-item-id="horse2"
+          data-item-price="79.99"
+          data-item-url="./horses/horse2"
+          data-item-description="Horse 2."
+          data-item-image="./horses/horse2.jpg"
+          data-item-name="Horse 2">
+          Add to cart
+        </button>
+      </div>
+
+      <div class="content">
+        <a data-modal="#modal" href="#">
+          <img src="./horses/horse3.jpg"/>
+        </a>
+
+        <div class="modal" data-modal-window id="modal">
+          <img src="./horses/horse3.jpg"/>
+        </div>      <button class="snipcart-add-item"
+          data-item-id="horse3"
+          data-item-price="79.99"
+          data-item-url="./horses/horse3"
+          data-item-description="Horse 3."
+          data-item-image="./horses/horse3.jpg"
+          data-item-name="Horse 3">
+          Add to cart
+        </button>
+      </div>
+
+      <div class="content">
+        <a data-modal="#modal" href="#">
+          <img src="./horses/horse4.jpeg"/>
+        </a>
+
+        <div class="modal" data-modal-window id="modal">
+          <img src="./horses/horse4.jpeg"/>
+        </div>      <button class="snipcart-add-item"
+          data-item-id="horse4"
+          data-item-price="79.99"
+          data-item-url="./horses/horse4"
+          data-item-description="Horse 4."
+          data-item-image="./horses/horse4.jpeg"
+          data-item-name="Horse 4">
+          Add to cart
+        </button>
+      </div>
+
+      <div class="content">
+        <a data-modal="#modal" href="#">
+          <img src="./horses/horse5.jpg"/>
+        </a>
+
+        <div class="modal" data-modal-window id="modal">
+          <img src="./horses/horse5.jpg"/>
+        </div>      <button class="snipcart-add-item"
+          data-item-id="horse5"
+          data-item-price="79.99"
+          data-item-url="./horses/horse5"
+          data-item-description="Horse 5."
+          data-item-image="./horses/horse5.jpg"
+          data-item-name="Horse 5">
+          Add to cart
+        </button>
+      </div>
     </div>
 
-    <div class="content">
-      <img src="/horses/horse2.jpg"/>
-      <button class="snipcart-add-item"
-        data-item-id="horse2"
-        data-item-price="79.99"
-        data-item-url="/horses/horse2"
-        data-item-description="Horse 2."
-        data-item-image="/horses/horse2.jpg"
-        data-item-name="Horse 2">
-        Add to cart
-      </button>
-    </div>
-
-    <div class="content">
-      <img src="/horses/horse3.jpg"/>
-      <button class="snipcart-add-item"
-        data-item-id="horse3"
-        data-item-price="79.99"
-        data-item-url="/horses/horse3"
-        data-item-description="Horse 3."
-        data-item-image="/horses/horse3.jpg"
-        data-item-name="Horse 3">
-        Add to cart
-      </button>
-    </div>
-
-    <div class="content">
-      <img src="/horses/horse4.jpeg"/>
-      <button class="snipcart-add-item"
-        data-item-id="horse4"
-        data-item-price="79.99"
-        data-item-url="/horses/horse4"
-        data-item-description="Horse 4."
-        data-item-image="/horses/horse4.jpeg"
-        data-item-name="Horse 4">
-        Add to cart
-      </button>
-    </div>
-
-    <div class="content">
-      <img src="/horses/horse5.jpg"/>
-      <button class="snipcart-add-item"
-        data-item-id="horse5"
-        data-item-price="79.99"
-        data-item-url="/horses/horse5"
-        data-item-description="Horse 5."
-        data-item-image="/horses/horse5.jpg"
-        data-item-name="Horse 5">
-        Add to cart
-      </button>
-    </div>
 
     <button class="snipcart-checkout">Click here to checkout</button>
 
     <script async src="https://cdn.snipcart.com/themes/v3.0.26/default/snipcart.js"></script>
     <div hidden id="snipcart" data-api-key="MGExNjJlNzYtYjRmNi00NzA2LTg1NzEtNmQ1YWNhYTYzMjk1NjM3NDI5NTYzNjQ1MTA4Mjkw" data-config-modal-style="side"></div>
+    <script>
+      modals.init();
+    </script>
+    <script src="siema.min.js"></script>
+    <script>
+      new Siema();
+    </script>
   </body>
 </html>

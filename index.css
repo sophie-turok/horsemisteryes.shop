@@ -1,3 +1,33 @@
 .content img {
-	width: 200px;
+	width: 100%;
+}
+
+#items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 90%;
+	margin: auto;
+}
+
+.content {
+    width: 21%;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+}
+
+.modal.active {
+	width:40%;
+}
+
+.snipcart-add-item {
+    background: url(imgs/addtocart.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
 }
