@@ -2,12 +2,10 @@
 	width: 100%;
 	padding: 15px;
 	outline: none;
+    cursor: pointer;
 }
 
-.item button.btn {
-    border: none;
-    background: transparent;
-    margin-bottom: 11px;
+.item a {
     cursor: pointer;
 }
 
