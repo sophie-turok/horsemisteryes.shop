@@ -33,25 +33,27 @@
             if (index === 0) {
                 txt.value =
 `<div class="item">
-    <img type="button" class="btn" data-modal-open="${document.getElementById("name").value.replace(' ','')}" src="./imgs/${input.value}"/>
-    <a type="button" class="btn" data-modal-open="${document.getElementById("name").value.replace(' ','')}"> ${document.getElementById("name").value} </a>
+    <img type="button" class="btn" data-modal-open="${document.getElementById("name").value.split(' ').join('')}" src="./imgs/${input.value}"/>
+    <a type="button" class="btn" data-modal-open="${document.getElementById("name").value.split(' ').join('')}"> ${document.getElementById("name").value} </a>
+    <br>
+    <a type="button" class="btn" data-modal-open="${document.getElementById("name").value.split(' ').join('')}"> $${price} </a>
     <br>
 
-    <div id="${document.getElementById("name").value.replace(' ','')}" data-modal>
+    <div id="${document.getElementById("name").value.split(' ').join('')}" data-modal>
         <div class="modal" data-modal-document>
             <div class="modalbuttons">
                 <button class="prev navbutton"></button>
                 <button class="next navbutton"></button>
                 <p style="padding-right:10px"></p>
                 <button class="snipcart-add-item"
-                data-item-id="${document.getElementById("name").value.replace(' ','')}"
+                data-item-id="${document.getElementById("name").value.split(' ').join('')}"
                 data-item-price="${price}"
                 data-item-image="./imgs/${input.value}"
                 data-item-name="${document.getElementById("name").value}">
                 Add to cart
                 </button>
             </div>
-	        <div class="siema" id="${document.getElementById("name").value.replace(' ','')}Siema">
+	        <div class="siema" id="${document.getElementById("name").value.split(' ').join('')}Siema">
 	            <img src="./imgs/${input.value}"/>`;
 	            } else {
                     if (input.value !== '') {
@@ -65,9 +67,9 @@
 	    </div>
     </div>
     <button class="snipcart-add-item"
-      data-item-id="${document.getElementById("name").value.replace(' ','')}"
+      data-item-id="${document.getElementById("name").value.split(' ').join('')}"
       data-item-price="${price}"
-      data-item-url="./${document.getElementById("name").value.replace(' ','')}"
+      data-item-url="./${document.getElementById("name").value.split(' ').join('')}"
       data-item-image="./imgs/${document.getElementById("generateForm").childNodes[0].value}"
       data-item-name="${document.getElementById("name").value}">
       Add to cart
