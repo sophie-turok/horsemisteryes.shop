@@ -13,6 +13,18 @@
 	width: 100%;
 }
 
+.snipcart-item-quantity__label {
+    display: none;
+}
+
+.snipcart-item-quantity__quantity {
+    display: none;
+}
+
+.snipcart-discount-box__button {
+    display: none;
+}
+
 #main {
 	display: flex;
 	flex-direction: row;
