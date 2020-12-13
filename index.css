@@ -25,6 +25,13 @@
     display: none;
 }
 
+#instagram {
+    width: 31px;
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+}
+
 #main {
 	display: flex;
 	flex-direction: row;
@@ -76,7 +83,7 @@
 
 .snipcart-checkout {
     position: fixed;
-    right: 100px;
+    right: 127px;
     bottom: 0;
     margin: 10px;
     padding: 5px;
@@ -116,7 +123,7 @@
 
 #contactus {
     position: fixed;
-    right: 0;
+    right: 37px;
     bottom: 0;
     margin: 10px;
     padding: 5px;
