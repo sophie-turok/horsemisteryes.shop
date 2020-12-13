@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        textarea {
+            width: 70%;
+            height: 500px;
+        }
+    </style>
+<body>
+<form style="display: flex; flex-direction: column; width: 300px" onsubmit="generate()">
+</form>
+<button onclick="generate()"> Submit </button>
+<br/>
+<script>
+    var items = ['catsdemimmini', 'communicationnecklace', 'delightshimmerscarf', 'introducinghonestynecklace', 'borntoruncuff', 'wecantstopcuff', 'poisonloverscuff', 'today4ucuff', 'keepitsimplestupidcuff', 'introducingforgiveness', 'yeahrightcuff', 'armsocks', 'dazzlesnapnecklace', 'batmanbangles2', 'glamourmoviestarbracelets', 'blackstarbowienecklace', 'xmasspoolbag', 'needitorkeepitbaseballbabyduffle', 'trustspiderscrossbody', 'lincolnbiobag', 'bagfrommiddleearth', 'jortmessenger', 'hotsmartpeoplebag', 'dyedviolinconcertcollar', 'snakesscarf', 'helldogscarf', 'badspellergoodideascollar', 'juliabutterflyhillscarf', 'oneeyedseagullcollar', 'heartandmusiccollar', 'letmerestinpiececollar', 'marshmallowcuff', 'junkycharms1of1']
+    for (var item of items) {
+        var itemP = document.createTextNode(item);
+        var itemSelect = document.createElement('input')
+        itemSelect.id = item
+        document.getElementsByTagName('form')[0].appendChild(itemP)
+        document.getElementsByTagName('form')[0].appendChild(itemSelect)
+        document.getElementsByTagName('form')[0].appendChild(document.createElement('br'))
+    }
+
+    function generate() {
+        var txt = document.getElementsByTagName("textarea");
+        if (txt.length === 0) {
+            txt = document.createElement("textarea");
+        } else {
+            txt = txt[0]
+        }
+        txt.value = '['
+        for (var item of items) {
+            txt.value += '"'+document.getElementById(item).value+'",'
+        }
+        txt.value = txt.value.slice(0, -1)+']';
+        document.getElementsByTagName("body")[0].appendChild(txt);
+    }
+</script>
+</body>
+</html>
