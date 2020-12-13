@@ -148,3 +148,11 @@
     border: none;
     cursor: pointer;
 }
+
+.soldout a {
+    text-decoration: line-through;
+}
+
+.soldout .snipcart-add-item {
+    display:none;
+}

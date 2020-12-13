@@ -1,12 +1,5 @@
-// const Http = new XMLHttpRequest();
-// const url='https://app.snipcart.com/api/products';
-// Http.open("GET", url);
-// Http.setRequestHeader('Accept', 'application/json');
-// Http.setRequestHeader('X-Snipcart-RequestToken', 'MzA3NzI3NDAtYzc2NC00YWZiLWE3NTYtZjk5NTcwMDIxN2NmNjM3NDI5NTYzNjQ1MTA4Mjkw');
-// Http.send();
-
 const start = async function() {
-	const secret = "MzA3NzI3NDAtYzc2NC00YWZiLWE3NTYtZjk5NTcwMDIxN2NmNjM3NDI5NTYzNjQ1MTA4Mjkw"
+	const secret = "S_ZWY2MmU3ZjAtYzZkOC00ZGY2LWE1YTAtMmQ2ODVkZjJjNThhNjM3NDM0MzEyNDEwMDkxMTQ5"
 
 	const request = await fetch('https://app.snipcart.com/api/products', {
 	    headers: {
@@ -17,5 +10,12 @@ const start = async function() {
 
 	const result = await request.json()
 	console.log(result)
+	for (var item of result.items) {
+		if (item.stock == 0) {
+			$('a[data-modal-open='+item.userDefinedId+']').first().parent()[0].classList.add('soldout')
+			$('a[data-modal-open='+item.userDefinedId+']').first().parent().append('Sold out')
+			$('#'+item.userDefinedId).addClass('soldout')
+		}
+	}
 }
 start()
