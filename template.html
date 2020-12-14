@@ -9,20 +9,20 @@
     </style>
 <body>
 <form style="display: flex; flex-direction: column; width: 300px" onsubmit="generate()">
+    <p> [UPDATED] THIS MAKES THE CODE FOR ONE ITEM. Fill out form to make the code to paste into index.html :D </p>
+    <p> name </p>
+    <input id="name"> </input>
+    <p> price </p>
+    <input id="price"> </input>
+    <p> weight (1 = $4, 2=$8, 3 = $10) </p>
+    <input id="weight"> </input>
+    <p> images </p>
+    <div id="generateForm"><input/></div>
 </form>
 <button onclick="generate()"> Submit </button>
+<button onclick="newimg()"> New image </button>
 <br/>
 <script>
-    var items = ['catsdemimmini', 'communicationnecklace', 'delightshimmerscarf', 'introducinghonestynecklace', 'borntoruncuff', 'wecantstopcuff', 'poisonloverscuff', 'today4ucuff', 'keepitsimplestupidcuff', 'introducingforgiveness', 'yeahrightcuff', 'armsocks', 'dazzlesnapnecklace', 'batmanbangles2', 'glamourmoviestarbracelets', 'blackstarbowienecklace', 'xmasspoolbag', 'needitorkeepitbaseballbabyduffle', 'trustspiderscrossbody', 'lincolnbiobag', 'bagfrommiddleearth', 'jortmessenger', 'hotsmartpeoplebag', 'dyedviolinconcertcollar', 'snakesscarf', 'helldogscarf', 'badspellergoodideascollar', 'juliabutterflyhillscarf', 'oneeyedseagullcollar', 'heartandmusiccollar', 'letmerestinpiececollar', 'marshmallowcuff', 'junkycharms1of1']
-    for (var item of items) {
-        var itemP = document.createTextNode(item);
-        var itemSelect = document.createElement('input')
-        itemSelect.id = item
-        document.getElementsByTagName('form')[0].appendChild(itemP)
-        document.getElementsByTagName('form')[0].appendChild(itemSelect)
-        document.getElementsByTagName('form')[0].appendChild(document.createElement('br'))
-    }
-
     function generate() {
         var txt = document.getElementsByTagName("textarea");
         if (txt.length === 0) {
@@ -30,12 +30,53 @@
         } else {
             txt = txt[0]
         }
-        txt.value = '['
-        for (var item of items) {
-            txt.value += '"'+document.getElementById(item).value+'",'
-        }
-        txt.value = txt.value.slice(0, -1)+']';
+        var price = document.getElementById("price").value.replace('$','');
+        var weight = document.getElementById("weight").value;
+        const id = document.getElementById("name").value.split(' ').join('');
+        const name = document.getElementById("name").value;
+        [].forEach.call(document.getElementById("generateForm").childNodes,(input, index) => {
+            if (index === 0) {
+                txt.value =
+`<div class="item">
+    <img class="btn" data-modal-open="${id}" src="./imgs/${input.value}" type="button"/>
+    <a class="btn" data-modal-open="${id}" type="button"> ${name} </a>
+    <a class="btn" data-modal-open="${id}" type="button">$${price}</a><br/>
+    <div data-modal="" id="${id}">
+        <div class="modal" data-modal-document="">
+            <div class="modalbuttons">
+                <button class="prev navbutton"></button>
+                <button class="next navbutton"></button>
+                <p style="padding-right:10px"></p>
+                <button class="snipcart-add-item" data-item-id="${id}" data-item-image="./imgs/${input.value}" data-item-max-quantity="1" data-item-name="${name}" data-item-price="${price}" data-item-url="/" data-item-weight="${weight}">
+                    Add to cart
+                </button>
+            </div>
+            <div class="siema" id="${id}Siema">
+                <img src="./imgs/${input.value}"/>`
+            } else {
+                if (input.value !== '') {
+                    txt.value = `${txt.value}
+                <img src="./imgs/${input.value}"/>`
+                }
+            }
+        });
+        txt.value = `${txt.value}
+            </div>
+        </div>
+    </div>
+    <button class="snipcart-add-item" data-item-id="${id}" data-item-image="./imgs/${document.getElementById("generateForm").childNodes[0].value}" data-item-max-quantity="1" data-item-name="${name}" data-item-price="${price}" data-item-url="/" data-item-weight="${weight}">
+        Add to cart
+    </button>
+</div>`;
         document.getElementsByTagName("body")[0].appendChild(txt);
+    }
+
+    var imgCount = 1;
+    function newimg() {
+        imgCount++;
+        document.getElementById("generateForm").appendChild(
+            document.createElement("input")
+        )
     }
 </script>
 </body>

@@ -1,7 +1,7 @@
 const start = async function() {
 	const secret = "S_ZWY2MmU3ZjAtYzZkOC00ZGY2LWE1YTAtMmQ2ODVkZjJjNThhNjM3NDM0MzEyNDEwMDkxMTQ5"
 
-	const request = await fetch('https://app.snipcart.com/api/products', {
+	const request = await fetch('https://app.snipcart.com/api/products?limit=1000', {
 	    headers: {
 	        'Authorization': `Basic ${btoa(secret)}`,
 	        'Accept': 'application/json'
