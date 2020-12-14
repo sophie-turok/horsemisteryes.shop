@@ -156,3 +156,12 @@
 .soldout .snipcart-add-item {
     display:none;
 }
+
+
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+  .item {
+    width: 100%;
+  }
+}
