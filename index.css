@@ -164,4 +164,8 @@
   .item {
     width: 100%;
   }
+
+  body {
+    margin-bottom: 25px;
+  }
 }
