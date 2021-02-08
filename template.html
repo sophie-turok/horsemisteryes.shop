@@ -13,6 +13,8 @@
     <p style="color: red"> NOTE: YOU ALSO NEED TO SET THE STOCK TO 1 ON SNIPCART </p>
     <p> name </p>
     <input id="name"> </input>
+    <p> description </p>
+    <textarea id="description"></textarea>
     <p> price </p>
     <input id="price"> </input>
     <p> weight (1 = $4, 2=$8, 3 = $10) </p>
@@ -25,12 +27,13 @@
 <br/>
 <script>
     function generate() {
-        var txt = document.getElementsByTagName("textarea");
-        if (txt.length === 0) {
-            txt = document.createElement("textarea");
+        var txt = document.getElementById("finishedTemplate");
+        if (!txt) {
+            txt = document.createElement("textarea", {id: "finishedTemplate"});
         } else {
             txt = txt[0]
         }
+        var description = document.getElementById("description").value;
         var price = document.getElementById("price").value.replace('$','');
         var weight = document.getElementById("weight").value;
         const id = document.getElementById("name").value.split(' ').join('');
@@ -44,13 +47,16 @@
     <a class="btn" data-modal-open="${id}" type="button">$${price}</a><br/>
     <div data-modal="" id="${id}">
         <div class="modal" data-modal-document="">
-            <div class="modalbuttons">
-                <button class="prev navbutton"></button>
-                <button class="next navbutton"></button>
-                <p style="padding-right:10px"></p>
-                <button class="snipcart-add-item" data-item-id="${id}" data-item-image="./imgs/${input.value}" data-item-max-quantity="1" data-item-name="${name}" data-item-price="${price}" data-item-url="/" data-item-weight="${weight}">
-                    Add to cart
-                </button>
+            <div>
+                <div class="modalbuttons">
+                    <button class="prev navbutton"></button>
+                    <button class="next navbutton"></button>
+                    <p style="padding-right:10px"></p>
+                    <button class="snipcart-add-item" data-item-id="${id}" data-item-image="./imgs/${input.value}" data-item-max-quantity="1" data-item-name="${name}" data-item-price="${price}" data-item-description="${description}" data-item-url="/" data-item-weight="${weight}">
+                        Add to cart
+                    </button>
+                </div>
+                <h4> ${description} </h4>
             </div>
             <div class="siema" id="${id}Siema">
                 <img src="./imgs/${input.value}"/>`
@@ -65,7 +71,7 @@
             </div>
         </div>
     </div>
-    <button class="snipcart-add-item" data-item-id="${id}" data-item-image="./imgs/${document.getElementById("generateForm").childNodes[0].value}" data-item-max-quantity="1" data-item-name="${name}" data-item-price="${price}" data-item-url="/" data-item-weight="${weight}">
+    <button class="snipcart-add-item" data-item-id="${id}" data-item-image="./imgs/${document.getElementById("generateForm").childNodes[0].value}" data-item-max-quantity="1" data-item-name="${name}" data-item-price="${price}" data-item-url="/" data-item-weight="${weight}" data-item-description="${description}">
         Add to cart
     </button>
 </div>`;
